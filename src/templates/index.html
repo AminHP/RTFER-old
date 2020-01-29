@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title> Real-time Facial Expression Recognition </title>
+
+    <script type="text/javascript" src="{{ url_for('static', filename='socket.io.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='canvas-to-blob.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='main.js') }}"></script>
+
+</head>
+
+<body>
+
+    <h1> Real-time Facial Expression Recognition </h1>
+    <video id="video" width="{{ width }}" height="{{ height }}" autoplay></video>
+    <canvas id="canvas"></video>
+
+    <script type="text/javascript">
+
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const context = canvas.getContext("2d");
+        var socket;
+        var lastResult = {};
+
+        const fps = {{ fps }};
+        const quality = {{ quality }};
+        const width = {{ width }};
+        const height = {{ height }};
+        const constraints = {
+            audio: false,
+            video: {
+                width: width,
+                height: height
+            }
+        };
+
+        start();
+
+    </script>
+
+</body>
+</html>

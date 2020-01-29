@@ -1,0 +1,6 @@
+*.pyc
+venv*/
+
+data/*.csv
+data/*.pickle
+data/shape_predictor_68_face_landmarks.dat
